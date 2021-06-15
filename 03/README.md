@@ -44,6 +44,11 @@ body {
     background: var(--red);
 }
 </code></pre>
+<h2 id="enlaces-de-interés-css">Enlaces de interés CSS</h2>
+<ul>
+<li><a href="https://flexboxfroggy.com/#es">Flexbox froggy</a></li>
+<li><a href="https://cssgridgarden.com/#es">Grid garder</a></li>
+</ul>
 <h1 id="ejercicio">Ejercicio</h1>
 <p>Crear un proyecto nuevo para gestionar libros, donde tendremos un formulario (<strong>form.php</strong>) para poder dar de alta cada libro con los campos:</p>
 <ul>
