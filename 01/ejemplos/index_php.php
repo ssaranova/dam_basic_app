@@ -28,6 +28,8 @@ $miArrayAsociativo = array(
     'DNI' => '12345678A'
 );
 
+var_dump(array_key_exists('Nombre', $miArrayAsociativo));
+
 // foreach con clave y valor
 foreach ($miArrayAsociativo as $key => $value) {
     var_dump($key . ': ' . $value);
