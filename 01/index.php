@@ -2,27 +2,25 @@
 <html lang="es">
 
 <head>
+    <title>Mi título</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <meta name="author" content="Saúl" />
-    <meta name="description" content="Gestión de usuarios básica para practicar PHP, CSS y JS" />
-    <title>Mi aplicación</title>
+    <meta name="description" content="Mi descripción de menos de 160 carácteres" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="./assets/css/main.css" />
 </head>
 
 <body>
     <header>
-        <h1>Inicio</h1>
+        <h1>Mi homepage</h1>
     </header>
     <main>
         <section>
-            <article>
-                <h2>Este es un contenido dummy, para mostrar en la homepage.</h2>
-            </article>
+            <p>Esta es nuestra homepage</p>
         </section>
     </main>
-    <footer class="footer">
-        Copyright @<?= date('Y'); ?>
+    <footer>
+        Copyright @<?php echo date('Y'); ?>
     </footer>
 </body>
 
