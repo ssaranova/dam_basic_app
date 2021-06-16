@@ -65,8 +65,6 @@ class Database
     protected function __create($table, $columns, $values)
     {
         $query = 'INSERT INTO ' . $table . ' (' . $columns . ') VALUES (' . $values . ')';
-        var_dump($query);
-        die;
         return $this->executeQuery($query);
     }
 }

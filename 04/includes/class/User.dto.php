@@ -78,4 +78,14 @@ class UserDto
             }
         }
     }
+
+    /**
+     * Returns full UserDto object data as array
+     *
+     * @return array
+     */
+    public function toArray()
+    {
+        return get_object_vars($this);
+    }
 }

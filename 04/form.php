@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Variables a usar en los templates
  */
@@ -42,3 +43,13 @@ $title = 'Formulario usuarios';
     </form>
 </section>
 <?php require_once './includes/partials/footer.php'; ?>
+<?php
+if (!empty($_POST)) {
+    $user = new User();
+    if ($user->create($_POST)) {
+        header('location: ' . $_SERVER['PHP_SELF'] . '/../list.php');
+    } else {
+        echo 'Ha habido un error creando el usuario, inténtalo de nuevo más tarde.';
+    }
+}
+?>
