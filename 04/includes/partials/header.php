@@ -1,3 +1,4 @@
+<?php require_once './includes/class/User.php'; ?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -16,6 +17,7 @@
         <nav>
             <ul>
                 <li><a href="./">Inicio</a></li>
+                <li><a href="./list.php">Listado usuarios</a></li>
                 <li><a href="./form.php">Formulario alta</a></li>
             </ul>
         </nav>
