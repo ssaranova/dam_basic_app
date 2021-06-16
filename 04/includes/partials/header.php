@@ -1,4 +1,3 @@
-<?php require_once './includes/class/User.php'; ?>
 <!DOCTYPE html>
 <html lang="es">
 
