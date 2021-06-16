@@ -19,9 +19,9 @@ class Database
     private function connect()
     {
         try {
-            $this->conn = new mysqli(self::DDBB_HOST, self::DDBB_USER, self::DDBB_PASSWORD, self::DDBB_NAME);
-        } catch (Exception $e) {
-            throw new Exception($e->getMessage());
+            $this->conn = new PDO('mysql:host=' . self::DDBB_HOST . ';dbname=' . self::DDBB_NAME, self::DDBB_USER, self::DDBB_PASSWORD);
+        } catch (PDOException $e) {
+            print $e->getMessage();
         }
     }
 
@@ -51,7 +51,7 @@ class Database
     {
         $query = 'SELECT * FROM ' . $table . (!empty($where) ? ' WHERE ' . $where : '');
         $sql = $this->executeQuery($query);
-        return $sql->fetch_all(MYSQLI_ASSOC);
+        return $sql->fetchAll(PDO::FETCH_ASSOC);
     }
 
     /**
