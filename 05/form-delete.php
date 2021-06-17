@@ -24,6 +24,10 @@ $fullname = ($user) ? $user->getCompleteName() : '';
 <?php require_once './includes/partials/footer.php'; ?>
 <?php
 if (!empty($_POST)) {
-
+    if ($userManager->delete($user)) {
+        header('location: ' . $_SERVER['PHP_SELF'] . '/../list.php');
+    } else {
+        echo 'Ha habido un error eliminando el usuario, inténtalo de nuevo más tarde.';
+    }
 }
 ?>

@@ -26,12 +26,27 @@ class User extends Database
      * @param number $id
      * @return boolean|UserDto
      */
-    public function getById($id) {
+    public function getById($id)
+    {
         $result = $this->__read(self::TABLE, "id=$id", true);
         if (empty($result)) {
             return false;
         }
         return new UserDto($result);
+    }
+
+    /**
+     * Delete current user
+     *
+     * @param UserDto|boolean $user
+     * @return boolean
+     */
+    public function delete($user)
+    {
+        if (!$user instanceof UserDto) {
+            return false;
+        }
+        return $this->__delete(self::TABLE, "WHERE id=" . $user->getId());
     }
 
     /**
