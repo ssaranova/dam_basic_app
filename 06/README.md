@@ -1,16 +1,41 @@
+# 06 { css }
+¿Y ese título?, ¿qué vamos a hacer ahora? Cambiar radicalmente nuestra plantilla, o al menos, ¡eso intentaremos!
 
-# 05 - Actualización y eliminación
+Para ello, vamos a usar un framework que nos permita darle estilos ya predefinidos ayudándonos a reducir tiempo de desarrollo. ¿Cuáles tenemos? 
+- [Bootstrap](https://getbootstrap.com/)
+- [Materialize](https://materializecss.com/)
+- [Bootstrap + Materialize](https://mdbootstrap.com/): Tiene limitaciones, hay versión PRO
+- [Pure CSS](https://purecss.io/)
+- [Foundation](https://get.foundation/)
+- ...
 
-En este quinto ejercicio haremos la gestión de los dos últimos métodos que nos quedan del CRUD, el de eliminar y el de modificar.
+En nuestro caso usaremos bootstrap ya que tiene plantillas base para poder basarnos en ellas.
 
-Para ello, haremos cambios en el formulario de alta para poder cargar un usuario existente, así como crearemos un nuevo formulario para la eliminación del usuario seleccionado.
+# Boostrap
+Para poder poner bootstrap en nuestro proyecto, accederemos a su [página oficial](https://getbootstrap.com/docs/4.6/getting-started/introduction/) desde la cual podremos ver sus ejemplos o bien cómo incluirlo en nuestro proyecto. 
 
-A su vez, añadiremos los métodos de **update** y **delete** en nuestra clase de gestión de usuarios y una nueva que será **save**, desde la cuál controlaremos si el usuario existe o no para llamar a crear o a actualizar.
+## Inclusión en nuestro proyecto
+Nos descargaremos la última versión y pondremos la inclusión del CSS en nuestra etiqueta `<head>` y el JS junto con jQuery al final de nuestra `<body>`
 
+- head:
+
+> `<link href="./assets/css/bootstrap.min.css" rel="stylesheet" />`
+
+ - body:        
+
+> `<script> src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>`
+> `<script src="./assets/js/bootstrap.bundle.min.js"></script>`
+
+    
+Otra manera de incluirlo, si no queremos tener almacenado en nuestro equipo los ficheros, es utilizar las rutas del CDN, aunque estas las pueden modificar.
+
+Nos basaremos en la documentación para modificar:
+- [Navegación añadiendo desplegable móvil](https://getbootstrap.com/docs/4.6/components/navbar/)
+- [Tabla listado](https://getbootstrap.com/docs/4.6/content/tables/)
+- [Botones acción](https://getbootstrap.com/docs/4.6/components/buttons/)
+- [Formulario](https://getbootstrap.com/docs/4.6/components/forms/)
 
 # Ejercicio
-Crear formulario para eliminación de libros (**form-delete.php**)
+Añadir bootstrap a nuestro proyecto y cambiar la apariencia para que use [esta](https://getbootstrap.com/docs/4.6/examples/sticky-footer-navbar/#) plantilla base en la navegación y luego en los diferentes componentes usados.
 
-Modificar clase gestión de libros para añadir el método de eliminación y el método de actualización con sus respectivas queries. Crear también el método **save** como *público* desde el cuál llamaremos a update y create, y cambiar a *privados* **update** y **create**
 
-Finalmente añadiremos los enlaces de editar y eliminar a cada libro en el listado y, a enviando un parámetro GET a la URL correspondiente, rellenaremos o eliminaremos los datos.
