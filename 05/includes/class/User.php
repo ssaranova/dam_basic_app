@@ -52,15 +52,45 @@ class User extends Database
     /**
      * Save new user
      *
-     * @param array $data
+     * @param UserDto $user
      * @return boolean
      */
-    public function create($data = [])
+    private function create(UserDto $user)
     {
-        $user = new UserDto($data);
         $userData = get_object_vars($user);
         $columns = sprintf("`%s`", implode("`, `", array_keys($userData)));
         $values = sprintf("'%s'", implode("', '", $userData));
         return $this->__create(self::TABLE, $columns, $values);
+    }
+
+    /**
+     * Update current user
+     *
+     * @param UserDto $user
+     * @return boolean
+     */
+    private function update(UserDto $user)
+    {
+        $values = [];
+        $userData = get_object_vars($user);
+        foreach ($userData as $key => $value) {
+            $values[] = sprintf("`%s` = '%s'", $key, $value);
+        }
+        $where = sprintf("`id` = %s", $user->getId());
+        return $this->__update(self::TABLE, implode(', ', $values), $where);
+    }
+
+    /**
+     * Save new / existent user
+     *
+     * @param array $data
+     * @return boolean
+     */
+    public function save($data = [])
+    {
+        $user = new UserDto($data);
+        return (empty($user->getId())) ?
+            $this->create($user) :
+            $this->update($user);
     }
 }

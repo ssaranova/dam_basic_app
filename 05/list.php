@@ -32,7 +32,7 @@ $users = $user->getAllUsers();
                     <td><?= $user->getPhone(); ?></td>
                     <td><?= $user->getBirthday(); ?></td>
                     <td><?= $user->getGender(); ?></td>
-                    <td><a href="./form-delete.php?id=<?= $user->getId(); ?>">Eliminar</a></td>
+                    <td><a href="./form.php?id=<?= $user->getId(); ?>">Editar</a> || <a href="./form-delete.php?id=<?= $user->getId(); ?>">Eliminar</a></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>

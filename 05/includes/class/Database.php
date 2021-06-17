@@ -61,6 +61,20 @@ class Database
     }
 
     /**
+     * Update register using query
+     *
+     * @param string $table
+     * @param string $values
+     * @param string $where
+     * @return boolean
+     */
+    protected function __update($table, $values, $where)
+    {
+        $query = "UPDATE " . $table . " SET " . $values . " WHERE " . $where;
+        return $this->executeQuery($query);
+    }
+
+    /**
      * Create register using query
      *
      * @param string $table
