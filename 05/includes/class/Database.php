@@ -45,13 +45,19 @@ class Database
      *
      * @param string $table
      * @param string $where
+     * @param boolean $unique
      * @return boolean|array
      */
-    protected function __read($table, $where = '')
+    protected function __read($table, $where = '', $unique = false)
     {
         $query = 'SELECT * FROM ' . $table . (!empty($where) ? ' WHERE ' . $where : '');
         $sql = $this->executeQuery($query);
-        return $sql->fetchAll(PDO::FETCH_ASSOC);
+
+        if (!$sql || empty($sql->rowCount())) {
+            return false;
+        }
+
+        return ($unique) ? $sql->fetch(PDO::FETCH_ASSOC) : $sql->fetchAll(PDO::FETCH_ASSOC);
     }
 
     /**
@@ -66,5 +72,17 @@ class Database
     {
         $query = 'INSERT INTO ' . $table . ' (' . $columns . ') VALUES (' . $values . ')';
         return $this->executeQuery($query);
+    }
+
+    /**
+     * Delete register using query
+     *
+     * @param string $table
+     * @param string $filter
+     * @return void
+     */
+    protected function __delete($table, $filter)
+    {
+        return $this->executeQuery("DELETE FROM " . $table . " " . $filter);
     }
 }

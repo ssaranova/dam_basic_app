@@ -19,6 +19,7 @@ $users = $user->getAllUsers();
                 <th>Teléfono</th>
                 <th>Cumpleaños</th>
                 <th>Género</th>
+                <th>Operaciones</th>
             </tr>
         </thead>
         <tbody>
@@ -31,6 +32,7 @@ $users = $user->getAllUsers();
                     <td><?= $user->getPhone(); ?></td>
                     <td><?= $user->getBirthday(); ?></td>
                     <td><?= $user->getGender(); ?></td>
+                    <td><a href="./form-delete.php?id=<?= $user->getId(); ?>">Eliminar</a></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>

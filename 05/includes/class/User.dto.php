@@ -66,6 +66,16 @@ class UserDto
     }
 
     /**
+     * Get the full name
+     */
+    public function getCompleteName(){
+        return implode(' ', [
+            $this->getName(),
+            $this->getLastname()
+        ]);
+    }
+
+    /**
      * Create new UserDto
      *
      * @param array $data

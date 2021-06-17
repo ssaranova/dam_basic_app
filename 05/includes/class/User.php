@@ -21,6 +21,20 @@ class User extends Database
     }
 
     /**
+     * Get user by ID
+     *
+     * @param number $id
+     * @return boolean|UserDto
+     */
+    public function getById($id) {
+        $result = $this->__read(self::TABLE, "id=$id", true);
+        if (empty($result)) {
+            return false;
+        }
+        return new UserDto($result);
+    }
+
+    /**
      * Save new user
      *
      * @param array $data
