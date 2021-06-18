@@ -32,6 +32,7 @@ class User extends Database
         if (empty($result)) {
             return false;
         }
+
         return new UserDto($result);
     }
 

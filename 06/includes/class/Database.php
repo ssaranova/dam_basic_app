@@ -8,9 +8,6 @@ class Database
 
     private $conn;
 
-    /**
-     * Returns database connection
-     */
     function __construct()
     {
         $this->connect();
@@ -50,7 +47,7 @@ class Database
      */
     protected function __read($table, $where = '', $unique = false)
     {
-        $query = 'SELECT * FROM ' . $table . (!empty($where) ? ' WHERE ' . $where : '');
+        $query = "SELECT * FROM " . $table . (!empty($where) ? " WHERE " . $where : '');
         $sql = $this->executeQuery($query);
 
         if (!$sql || empty($sql->rowCount())) {
@@ -84,7 +81,7 @@ class Database
      */
     protected function __create($table, $columns, $values)
     {
-        $query = 'INSERT INTO ' . $table . ' (' . $columns . ') VALUES (' . $values . ')';
+        $query = "INSERT INTO " . $table . " (" . $columns . ") VALUES (" . $values . ")";
         return $this->executeQuery($query);
     }
 
@@ -93,7 +90,7 @@ class Database
      *
      * @param string $table
      * @param string $filter
-     * @return void
+     * @return boolean
      */
     protected function __delete($table, $filter)
     {

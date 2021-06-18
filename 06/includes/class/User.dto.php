@@ -68,7 +68,8 @@ class UserDto
     /**
      * Get the full name
      */
-    public function getCompleteName(){
+    public function getCompleteName()
+    {
         return implode(' ', [
             $this->getName(),
             $this->getLastname()
