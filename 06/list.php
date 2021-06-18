@@ -9,33 +9,35 @@ $user = new User();
 $users = $user->getAllUsers();
 ?>
 <section class="container">
-    <table class="users">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Apellidos</th>
-                <th>Email</th>
-                <th>Teléfono</th>
-                <th>Cumpleaños</th>
-                <th>Género</th>
-                <th>Operaciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($users as $user) : ?>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover users">
+            <thead>
                 <tr>
-                    <td><?= $user->getId(); ?></td>
-                    <td><?= $user->getName(); ?></td>
-                    <td><?= $user->getLastname(); ?></td>
-                    <td><?= $user->getEmail(); ?></td>
-                    <td><?= $user->getPhone(); ?></td>
-                    <td><?= $user->getBirthday(); ?></td>
-                    <td><?= $user->getGender(); ?></td>
-                    <td><a href="./form.php?id=<?= $user->getId(); ?>">Editar</a> || <a href="./form-delete.php?id=<?= $user->getId(); ?>">Eliminar</a></td>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellidos</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Teléfono</th>
+                    <th scope="col">Cumpleaños</th>
+                    <th scope="col">Género</th>
+                    <th scope="col">Operaciones</th>
                 </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                <?php foreach ($users as $user) : ?>
+                    <tr>
+                        <td scope="row"><?= $user->getId(); ?></td>
+                        <td><?= $user->getName(); ?></td>
+                        <td><?= $user->getLastname(); ?></td>
+                        <td><?= $user->getEmail(); ?></td>
+                        <td><?= $user->getPhone(); ?></td>
+                        <td><?= $user->getBirthday(); ?></td>
+                        <td><?= $user->getGender(); ?></td>
+                        <td><a class="btn btn-primary" href="./form.php?id=<?= $user->getId(); ?>">Editar</a> <a class="btn btn-danger" href="./form-delete.php?id=<?= $user->getId(); ?>">Eliminar</a></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
 </section>
 <?php require_once './includes/partials/footer.php'; ?>

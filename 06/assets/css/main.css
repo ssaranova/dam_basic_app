@@ -5,16 +5,30 @@
     --grey-dark: #484848;
 }
 
-body {
-    background: lightblue;
-    margin: 0;
+html {
+    position: relative;
+    min-height: 100%;
 }
 
-body > * {
+body {
+    margin: 0;
+    margin-top: 60px;
+}
+
+body > .container {
+    padding: 60px 15px;
+}
+
+h1 {
+    color: var(--white);
+}
+
+header > nav {
     padding: 10px;
 }
 
 footer {
+    padding: 10px 0;
     background: var(--grey-dark);
     color: var(--white);
     position: fixed;
@@ -24,21 +38,7 @@ footer {
 }
 
 .form {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
     gap: 15px;
-}
-
-.form > div {
-    margin-bottom: 15px;
-    flex: 0 0 25%;
-    display: flex;
-    flex-direction: column;
-}
-
-.form > div:last-of-type {
-    flex: 0 0 100%;
 }
 
 .form .form__label {
@@ -49,24 +49,17 @@ footer {
 }
 
 .form .form__input,
-.form .form__select,
-.form .form__submit {
+.form .form__select {
     background: var(--white);
     padding: 10px 25px;
     border: none;
     border-radius: 0;
     outline: 0;
     min-height: 16px;
+    height: inherit !important;
 }
 
 .form .form__input[type="date"] {
     padding-top: 8px;
     padding-bottom: 8px;
-}
-
-.form .form__submit {
-    max-width: 150px;
-    color: #FFF;
-    background: var(--green);
-    cursor: pointer;
 }
