@@ -11,7 +11,7 @@ Para ello, vamos a usar un framework que nos permita darle estilos ya predefinid
 
 En nuestro caso usaremos bootstrap ya que tiene plantillas base para poder basarnos en ellas.
 
-# Boostrap
+# Bootstrap
 Para poder poner bootstrap en nuestro proyecto, accederemos a su [página oficial](https://getbootstrap.com/docs/4.6/getting-started/introduction/) desde la cual podremos ver sus ejemplos o bien cómo incluirlo en nuestro proyecto. 
 
 ## Inclusión en nuestro proyecto
