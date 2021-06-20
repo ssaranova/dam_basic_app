@@ -1,31 +1,45 @@
 (function ($) {
-    console.log('ajkdhsahfjksdhfjkdshfjkds');
 
-    var mi_variable = 'Hola mundo';
-    mi_variable += ' quee';
-    let mi_variable2 = 'Hola mundo 2';
-    mi_variable2 += ' adios';
-    const mi_variable3 = [];
-    mi_variable3.push('hola');
-    mi_variable3.push('que ase');
-    console.log(mi_variable);
-    console.log(mi_variable2);
-    console.log(mi_variable3);
-
-    var jsSearch = document.getElementById('navbarCollapse');
-    console.log(jsSearch);
+    var jsSearch1 = document.getElementById('navbarCollapse');
+    console.log(jsSearch1);
 
     var $search1 = $('#navbarCollapse');
     console.log($search1);
 
-    var jsSearch2 = document.getElementsByClassName('nav-item');
+    var jsSearch2 = document.getElementsByClassName('nav-item')[0];
     console.log(jsSearch2);
+
+    var $search2 = $('#navbarCollapse .navbar-nav .nav-item:first-of-type');
+    var $search2 = $('#navbarCollapse .navbar-nav .nav-item').first();
+    console.log($search2);
+
+    jsSearch1.setAttribute('data-clase1', 'mi custom attr');
+    $search1.attr('data-clase2', 'mi custom attr');
+
+    jsSearch1.classList.add('class-1');
+    $search1.addClass('class-2');
+
+    var mi_variable = 'Hola mundo';
+    mi_variable += ' quee';
+
+    let mi_variable2 = 'Hola mundo 2';
+    mi_variable2 += ' adios';
+
+    const mi_variable3 = [];
+
+    mi_variable3.push('hola');
+    mi_variable3.push('que ase');
+
+    console.log(mi_variable);
+    console.log(mi_variable2);
+    console.log(mi_variable3);
 
     var $search2 = $search1.find('.nav-item');
     for (i = 0; i < $search2.length; i++) {
         var item = $($search2[i]);
         console.log(item);
     }
+
     $.each($search2, function () {
         console.log(this);
         console.log($(this));
@@ -42,7 +56,7 @@
     $('.navbar-nav').prepend($search2.last());
     console.log($search2);
 
-    $(document).ready(function(){
+    $(document).ready(function () {
         console.log('jkahsjkdhakf');
     });
 })(jQuery);
