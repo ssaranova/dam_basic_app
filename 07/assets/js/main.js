@@ -85,7 +85,6 @@
             responsive: true,
             info: false,
             initComplete: function (settings, json) {
-                
                 whenI18nLoaded.then(function () {
                     body.find('.paginate_button.previous a').text($.i18n('previous'));
                     body.find('.paginate_button.next a').text($.i18n('next'));
