@@ -16,7 +16,9 @@
     "male": "Masculino",
     "female": "Femenino",
     "other": "Otro",
-    "search": "Buscar",
-    "previous": "Anterior",
-    "next": "Siguiente"
+    "add_employee": "Añadir empleado",
+    "employee_management": "Gestión empleados",
+    "cancel": "Cancelar",
+    "delete_employee": "Eliminar empleado",
+    "delete_employee_msg": "¿Estás seguro de que deseas eliminar al usuario <strong class=\"name\"></strong>?"
 }

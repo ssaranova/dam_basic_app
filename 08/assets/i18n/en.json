@@ -16,6 +16,9 @@
     "male": "Male",
     "female": "Female",
     "other": "Other",
-    "previous": "Previous",
-    "next": "Next"
+    "add_employee": "Add employee",
+    "employee_management": "Employee management",
+    "cancel": "Cancel",
+    "delete_employee": "Delete employee",
+    "delete_employee_msg": "Are you sure you want to delete the user <strong class=\"name\"></strong>?"
 }

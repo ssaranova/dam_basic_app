@@ -52,11 +52,13 @@
         console.log($(this));
     });
 
+    /*
     var link = $('<a />').addClass('mi-super-enlace').attr('href', '#').text('Mi super enlace');
     link.insertAfter($search2.first());
     $('.navbar-nav').append($search2.first());
     $('.navbar-nav').prepend($search2.last());
     console.log($search2);
+    */
 
     var I18n = {
         init: function () {
