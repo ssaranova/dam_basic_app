@@ -8,7 +8,8 @@
     <meta name="author" content="Saúl" />
     <meta name="description" content="Gestión de usuarios básica para practicar PHP, CSS y JS" />
     <title>Mi aplicación</title>
-    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/libraries/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/libraries/datatables/datatables.min.css" />
     <link rel="stylesheet" href="./assets/css/main.css" />
 </head>
 
