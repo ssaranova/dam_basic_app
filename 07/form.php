@@ -15,42 +15,36 @@ if (!empty($_GET) && isset($_GET['id'])) {
     }
 }
 
-$genders = [
-    'Masculino',
-    'Femenino',
-    'Otro'
-];
 ?>
 <section class="container">
     <form class="form" action="./form.php" method="POST">
         <div class="form-row">
             <div class="form-group col-sm-6 col-md-4">
-                <label class="form__label" for="name">Nombre</label>
-                <input class="form-control form__input" type="text" name="name" id="name" value="<?= $name ?? '' ?>" required />
+                <label class="form__label" for="name" data-i18n="name">Nombre</label>
+                <input class="form-control form__input" type="text" name="name" id="name" value="<?= $name ?? '' ?>" data-i18n="[placeholder]name" required />
             </div>
             <div class="form-group col-sm-6 col-md-4">
-                <label class="form__label" for="lastname">Apellidos</label>
-                <input class="form-control form__input" type="text" name="lastname" id="lastname" value="<?= $lastname ?? '' ?>" required />
+                <label class="form__label" for="lastname" data-i18n="lastname">Apellidos</label>
+                <input class="form-control form__input" type="text" name="lastname" id="lastname" value="<?= $lastname ?? '' ?>" data-i18n="[placeholder]lastname" required />
             </div>
             <div class="form-group col-sm-6 col-md-4">
-                <label class="form__label" for="email">Correo electrónico</label>
-                <input class="form-control form__input" type="email" name="email" id="email" value="<?= $email ?? '' ?>" required />
+                <label class="form__label" for="email" data-i18n="email">Correo electrónico</label>
+                <input class="form-control form__input" type="email" name="email" id="email" value="<?= $email ?? '' ?>" data-i18n="[placeholder]email" required />
             </div>
             <div class="form-group col-sm-6 col-md-4">
-                <label class="form__label" for="phone">Teléfono</label>
-                <input class="form-control form__input" type="text" name="phone" id="phone" value="<?= $phone ?? '' ?>" />
+                <label class="form__label" for="phone" data-i18n="phone">Teléfono</label>
+                <input class="form-control form__input" type="text" name="phone" id="phone" value="<?= $phone ?? '' ?>" data-i18n="[placeholder]phone" />
             </div>
             <div class="form-group col-sm-6 col-md-4">
-                <label class="form__label" for="birthday">Fecha de cumpleaños</label>
+                <label class="form__label" for="birthday" data-i18n="birthday">Fecha de cumpleaños</label>
                 <input class="form-control form__input" type="date" name="birthday" id="birthday" value="<?= $birthday ?? '' ?>" required />
             </div>
             <div class="form-group col-sm-6 col-md-4">
-                <label class="form__label" for="gender">Género</label>
+                <label class="form__label" for="gender" data-i18n="gender">Género</label>
                 <select id="gender" name="gender" class="form-control form__select">
-                    <?php foreach ($genders as $value) : ?>
-                        <?php $selected = (isset($gender) && $gender === $value) ? 'selected' : ''; ?>
-                        <option value="<?= $value ?>" <?= $selected; ?>><?= $value ?></option>
-                    <?php endforeach; ?>
+                    <option value="Masculino" <?php if (isset($gender) && $gender === 'Masculino') { ?> selected <?php } ?> data-i18n="male">Masculino</option>
+                    <option value="Femenino" <?php if (isset($gender) && $gender === 'Femenino') { ?> selected <?php } ?> data-i18n="female">Femenino</option>
+                    <option value="Otro" <?php if (isset($gender) && $gender === 'Otro') { ?> selected <?php } ?> data-i18n="other">Otro</option>
                 </select>
             </div>
         </div>
@@ -58,7 +52,7 @@ $genders = [
             <?php if (isset($uid)) : ?>
                 <input type="hidden" name="id" value="<?= $uid ?>" />
             <?php endif; ?>
-            <input type="submit" class="btn btn-primary form__submit" value="Enviar formulario" title="Enviar formulario" />
+            <input type="submit" class="btn btn-primary form__submit" value="Enviar formulario" title="Enviar formulario" data-i18n="[value]submit" />
         </div>
     </form>
 </section>

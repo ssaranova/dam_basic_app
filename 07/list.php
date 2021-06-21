@@ -13,14 +13,14 @@ $users = $user->getAllUsers();
         <table class="table table-bordered table-hover users">
             <thead>
                 <tr>
-                    <th scope="col">ID</th>
+                    <th scope="col">#</th>
                     <th scope="col" data-i18n="name">Nombre</th>
-                    <th scope="col">Apellidos</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Teléfono</th>
-                    <th scope="col">Cumpleaños</th>
-                    <th scope="col">Género</th>
-                    <th scope="col">Operaciones</th>
+                    <th scope="col" data-i18n="lastname">Apellidos</th>
+                    <th scope="col" data-i18n="email">Email</th>
+                    <th scope="col" data-i18n="phone">Teléfono</th>
+                    <th scope="col" data-i18n="birthday">Cumpleaños</th>
+                    <th scope="col" data-i18n="gender">Género</th>
+                    <th scope="col" data-i18n="actions">Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -33,7 +33,10 @@ $users = $user->getAllUsers();
                         <td><?= $user->getPhone(); ?></td>
                         <td><?= $user->getBirthday(); ?></td>
                         <td><?= $user->getGender(); ?></td>
-                        <td><a class="btn btn-primary" href="./form.php?id=<?= $user->getId(); ?>">Editar</a> <a class="btn btn-danger" href="./form-delete.php?id=<?= $user->getId(); ?>">Eliminar</a></td>
+                        <td>
+                            <a class="btn btn-primary" href="./form.php?id=<?= $user->getId(); ?>" data-i18n="edit">Editar</a>
+                            <a class="btn btn-danger" href="./form-delete.php?id=<?= $user->getId(); ?>" data-i18n="delete">Eliminar</a>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>

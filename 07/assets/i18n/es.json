@@ -1,3 +1,22 @@
 {
-    "name": "Nombre"
+    "brand_name": "Mi aplicación",
+    "list": "Listado de usuarios",
+    "form": "Formulario de alta",
+    "accept": "Sí, eliminar usuario",
+    "name": "Nombre",
+    "lastname": "Apellidos",
+    "email": "Correo electrónico",
+    "phone": "Teléfono",
+    "birthday": "Fecha de cumpleaños",
+    "gender": "Género",
+    "submit": "Enviar formulario",
+    "actions": "Acciones",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "male": "Masculino",
+    "female": "Femenino",
+    "other": "Otro",
+    "search": "Buscar",
+    "previous": "Anterior",
+    "next": "Siguiente"
 }
