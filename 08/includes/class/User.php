@@ -1,6 +1,7 @@
 <?php
-require_once './includes/class/Database.php';
-require_once './includes/class/User.dto.php';
+$url = (strstr($_SERVER['REQUEST_URI'], 'ajax')) ? '../.' : '';
+require_once $url . './includes/class/Database.php';
+require_once $url . './includes/class/User.dto.php';
 class User extends Database
 {
     private const TABLE = 'users';
