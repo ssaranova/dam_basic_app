@@ -56,7 +56,26 @@
     $('.navbar-nav').prepend($search2.last());
     console.log($search2);
 
+    var I18n = {
+        init: function () {
+            $.i18n().debug = false;
+            $.i18n().load({
+                en: 'assets/i18n/en.json',
+                es: 'assets/i18n/es.json',
+            }).done(function(){
+                I18n.updateTexts();
+            });
+        },
+        updateTexts: function () {
+            $('body').i18n();
+        }
+    }
+
     $(document).ready(function () {
-        console.log('jkahsjkdhakf');
+        I18n.init();
+        $('table').DataTable({
+            responsive: true,
+            info: false
+        });
     });
 })(jQuery);

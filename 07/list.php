@@ -14,7 +14,7 @@ $users = $user->getAllUsers();
             <thead>
                 <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">Nombre</th>
+                    <th scope="col" data-i18n="name">Nombre</th>
                     <th scope="col">Apellidos</th>
                     <th scope="col">Email</th>
                     <th scope="col">Teléfono</th>
