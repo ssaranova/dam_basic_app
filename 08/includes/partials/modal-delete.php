@@ -1,4 +1,4 @@
-<div class="modal fade" id="delete-modal" tabindex="-1" aria-labelledby="delere-modal" aria-hidden="true">
+<div class="modal fade" id="delete-modal" tabindex="-1" aria-labelledby="delete-modal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <form class="form">
@@ -9,8 +9,10 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <span data-i18n="[html]delete_employee_msg">Estás seguro de que deseas eliminar al usuario <strong class="name"></strong>?</span>
-                    <input type="hidden" name="id" id="id" value="" />
+                    <span data-i18n="[html]delete_employee_msg">¿Estás seguro de que deseas eliminar al usuario <strong class="name"></strong>?</span>
+                    <div>
+                        <input type="hidden" name="id" id="id" value="" />
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal" data-i18n="cancel">Cancelar</button>

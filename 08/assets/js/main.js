@@ -78,11 +78,38 @@
         }
     }
 
+    var ModalsManagement = {
+        init: function () {
+            this.config();
+            this.addEvents();
+        },
+        config: function () {
+            this.body = body;
+            this.deleteModal = this.body.find('#delete-modal');
+            this.deleteForm = this.deleteModal.find('form');
+        },
+        addEvents: function () {
+            var that = this;
+            console.log(this);
+            this.deleteModal.on('show.bs.modal', function (e) {
+                console.log(this);
+                var relatedTarget = $(e.relatedTarget);
+                that.fillDeleteForm(relatedTarget.parents('tr'));
+            });
+        },
+        fillDeleteForm: function (userElement) {
+            var form = this.deleteForm;
+            form.find('[name="id"]').val(userElement.find('.id').text());
+            form.find('.name').text(userElement.find('.name').text() + ' ' + userElement.find('.lastname').text());
+        }
+    }
+
     $(document).ready(function () {
         html = $('html');
         body = html.find('body');
 
         I18n.init();
+        ModalsManagement.init();
         body.find('table').DataTable({
             responsive: true,
             info: false,

@@ -26,13 +26,13 @@ $users = $user->getAllUsers();
             <tbody>
                 <?php foreach ($users as $user) : ?>
                     <tr>
-                        <td scope="row"><?= $user->getId(); ?></td>
-                        <td><?= $user->getName(); ?></td>
-                        <td><?= $user->getLastname(); ?></td>
-                        <td><?= $user->getEmail(); ?></td>
-                        <td><?= $user->getPhone(); ?></td>
-                        <td><?= $user->getBirthday(); ?></td>
-                        <td><?= $user->getGender(); ?></td>
+                        <td class="id" scope="row"><?= $user->getId(); ?></td>
+                        <td class="name"><?= $user->getName(); ?></td>
+                        <td class="lastname"><?= $user->getLastname(); ?></td>
+                        <td class="email"><?= $user->getEmail(); ?></td>
+                        <td class="phone"><?= $user->getPhone(); ?></td>
+                        <td class="birthday"><?= $user->getBirthday(); ?></td>
+                        <td class="gender"><?= $user->getGender(); ?></td>
                         <td>
                             <a class="btn btn-primary" href="./form.php?id=<?= $user->getId(); ?>" data-i18n="edit">Editar</a>
                             <a class="btn btn-danger" href="./form-delete.php?id=<?= $user->getId(); ?>" data-toggle="modal" data-target="#delete-modal" data-i18n="delete">Eliminar</a>
