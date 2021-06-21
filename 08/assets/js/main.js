@@ -95,6 +95,24 @@
                 console.log(this);
                 var relatedTarget = $(e.relatedTarget);
                 that.fillDeleteForm(relatedTarget.parents('tr'));
+                that.deleteFormEvents();
+            });
+        },
+        deleteFormEvents: function () {
+            var that = this;
+            this.deleteModal.off('click', '.form__submit').on('click', '.form__submit', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                var xhr = new XMLHttpRequest()
+                xhr.open("POST", "./includes/ajax/deleteUser.php");
+                xhr.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        alert(this.responseText);
+                        location.reload();
+                    }
+                };
+                xhr.send(new FormData(that.deleteForm.get(0)));
             });
         },
         fillDeleteForm: function (userElement) {
