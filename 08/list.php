@@ -34,7 +34,7 @@ $users = $user->getAllUsers();
                         <td class="birthday"><?= $user->getBirthday(); ?></td>
                         <td class="gender"><?= $user->getGender(); ?></td>
                         <td>
-                            <a class="btn btn-primary" href="./form.php?id=<?= $user->getId(); ?>" data-i18n="edit">Editar</a>
+                            <a class="btn btn-primary edit" href="./form.php?id=<?= $user->getId(); ?>" data-toggle="modal" data-target="#add-modal" data-i18n="edit">Editar</a>
                             <a class="btn btn-danger" href="./form-delete.php?id=<?= $user->getId(); ?>" data-toggle="modal" data-target="#delete-modal" data-i18n="delete">Eliminar</a>
                         </td>
                     </tr>
@@ -42,6 +42,10 @@ $users = $user->getAllUsers();
             </tbody>
         </table>
     </div>
+    <div class="">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal" data-i18n="add_employee">Añadir empleado</button>
+    </div>
 </section>
 <?php require_once './includes/partials/footer.php'; ?>
+<?php require_once './includes/partials/modal-add.php'; ?>
 <?php require_once './includes/partials/modal-delete.php'; ?>
