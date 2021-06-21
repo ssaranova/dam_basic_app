@@ -1,5 +1,7 @@
 (function ($) {
 
+    var html, body, whenI18nLoaded;
+
     var jsSearch1 = document.getElementById('navbarCollapse');
     console.log(jsSearch1);
 
@@ -58,24 +60,37 @@
 
     var I18n = {
         init: function () {
-            $.i18n().debug = false;
-            $.i18n().load({
-                en: 'assets/i18n/en.json',
-                es: 'assets/i18n/es.json',
-            }).done(function(){
-                I18n.updateTexts();
+            whenI18nLoaded = new Promise(function (resolve, reject) {
+                $.i18n().debug = false;
+                $.i18n().load({
+                    en: 'assets/i18n/en.json',
+                    es: 'assets/i18n/es.json',
+                }).done(function () {
+                    I18n.updateTexts();
+                    resolve();
+                });
             });
         },
         updateTexts: function () {
-            $('body').i18n();
+            html.i18n();
         }
     }
 
     $(document).ready(function () {
+        html = $('html');
+        body = html.find('body');
+
         I18n.init();
-        $('table').DataTable({
+        body.find('table').DataTable({
             responsive: true,
-            info: false
+            info: false,
+            initComplete: function (settings, json) {
+                
+                whenI18nLoaded.then(function () {
+                    body.find('.paginate_button.previous a').text($.i18n('previous'));
+                    body.find('.paginate_button.next a').text($.i18n('next'));
+                });
+            }
         });
     });
 })(jQuery);
